@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <?define ProductId="1eb3e3fa-3ac6-4684-a506-1a3779c7e89d" ?>
+  <?define UpgradeCode="f602c96e-9c87-493c-ba7e-c166a3c8bbec" ?>
+  <?define ProductVersion="1.0.0.0" ?>
+
+  <Product Id="$(var.ProductId)" Name="Desktop Timer" Language="1033" Version="$(var.ProductVersion)"
+           Manufacturer="Marek Dzikiewicz" UpgradeCode="$(var.UpgradeCode)">
+
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+    <MediaTemplate EmbedCab="yes" />
+
+    <!-- Main feature -->
+    <Feature Id="DesktopTimer" Title="Desktop Timer" Level="1">
+      <ComponentGroupRef Id="DesktopTimerComponents" />
+    </Feature>
+    
+    <!-- Components -->
+    <PropertyRef Id="DesktopTimerComponents" />
+
+    <!-- UI -->
+    <UIRef Id="WixUI_FeatureTree" />
+    <WixVariable Id="WixUILicenseRtf" Value="License.rtf" />
+
+    <!-- Check if .NET Framework 4.5 is intalled -->
+    <PropertyRef Id="NETFRAMEWORK45"/>
+    <Condition Message="This application requires .NET Framework 4.5.">
+      <![CDATA[Installed OR NETFRAMEWORK45]]>
+    </Condition>
+
+  </Product>
+
+  <!-- Directories -->
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="Desktop Timer" />
+      </Directory>
+    </Directory>
+  </Fragment>
+
+</Wix>

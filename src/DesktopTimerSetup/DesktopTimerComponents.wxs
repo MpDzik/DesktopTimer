@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <Property Id="DesktopTimerComponents" Value="1" />
+    <?define SourceRoot = $(var.DesktopTimer.TargetDir)?>
+    <ComponentGroup Id="DesktopTimerComponents">
+      <Component Id="DesktopTimer_Component" Guid="1C7B0C4B-F6CE-485C-8B46-71443BE8ACFE" Directory="INSTALLFOLDER">
+        <File Id="DesktopTimerEXE" Name="DesktopTimer.exe" Source="$(var.SourceRoot)" KeyPath="yes" Vital="yes" />
+      </Component>
+      <Component Id="DesktopTimerConfig_Component" Guid="D7AE37C2-7F85-403C-918E-1BD90E5D9932" Directory="INSTALLFOLDER">
+        <File Id="DesktopTimerExeCONFIG" Name="DesktopTimer.exe.config" Source="$(var.SourceRoot)" KeyPath="yes" Vital="yes" />
+      </Component>
+      <Component Id="DesktopTimerPdb_Component" Guid="E57C4E64-08AD-4F0F-86BB-682294B7D8C7" Directory="INSTALLFOLDER">
+        <File Id="DesktopTimerPDB" Name="DesktopTimer.pdb" Source="$(var.SourceRoot)" KeyPath="yes" Vital="yes" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>
