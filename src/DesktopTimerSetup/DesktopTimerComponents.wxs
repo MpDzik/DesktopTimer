@@ -16,6 +16,12 @@
       <Component Id="DesktopTimerCorePdb_Component" Guid="33D94754-C861-4BA6-9A01-D7DA197BCD96" Directory="INSTALLFOLDER">
         <File Id="DesktopTimerCorePDB" Name="DesktopTimer.Core.pdb" Source="$(var.SourceRoot)" KeyPath="yes" Vital="yes" />
       </Component>
+      <Component Id="DesktopTimerDomain_Component" Guid="21BDF094-0D6B-4D4A-8FB7-13B6B100310B" Directory="INSTALLFOLDER">
+        <File Id="DesktopTimerDomainDLL" Name="DesktopTimer.Domain.dll" Source="$(var.SourceRoot)" KeyPath="yes" Vital="yes" />
+      </Component>
+      <Component Id="DesktopTimerDomainPdb_Component" Guid="A65ACB69-6F91-44BC-AF86-F13B8A863250" Directory="INSTALLFOLDER">
+        <File Id="DesktopTimerDomainPDB" Name="DesktopTimer.Domain.pdb" Source="$(var.SourceRoot)" KeyPath="yes" Vital="yes" />
+      </Component>
       <Component Id="DesktopTimer_Component" Guid="1C7B0C4B-F6CE-485C-8B46-71443BE8ACFE" Directory="INSTALLFOLDER">
         <File Id="DesktopTimerEXE" Name="DesktopTimer.exe" Source="$(var.SourceRoot)" KeyPath="yes" Vital="yes" />
       </Component>

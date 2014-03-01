@@ -11,6 +11,7 @@ namespace DesktopTimer
     using Autofac;
     using Caliburn.Micro;
     using DesktopTimer.Core;
+    using DesktopTimer.Domain;
     using DesktopTimer.ViewModels;
 
     /// <summary>
@@ -25,6 +26,7 @@ namespace DesktopTimer
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterModule<DesktopTimerCoreModule>();
+            builder.RegisterModule<DesktopTimerDomainModule>();
 
             builder.RegisterType<WindowManager>().As<IWindowManager>().InstancePerLifetimeScope();
             builder.Register<IEventAggregator>(c => new EventAggregator()).InstancePerLifetimeScope();

@@ -143,6 +143,10 @@
       <Project>{08229A47-66B7-48E7-AB9B-4EFFF4A4A76B}</Project>
       <Name>DesktopTimer.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DesktopTimer.Domain\DesktopTimer.Domain.csproj">
+      <Project>{1E008E05-FC06-4B3A-92CD-8E58BCF1D364}</Project>
+      <Name>DesktopTimer.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\MainView.xaml">
