@@ -37,13 +37,27 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\SolutionInfo.cs">
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
     <Compile Include="DesktopTimerCoreModule.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="ITimerManager.cs" />
+    <Compile Include="Storage\ITimerStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Storage\TimersCollection.cs" />
+    <Compile Include="TimerManager.cs" />
+    <Compile Include="Storage\DefaultTimerStore.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DesktopTimer.Domain\DesktopTimer.Domain.csproj">
+      <Project>{1e008e05-fc06-4b3a-92cd-8e58bcf1d364}</Project>
+      <Name>DesktopTimer.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
