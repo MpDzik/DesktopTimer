@@ -1,22 +1,18 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="MainWindow.xaml.cs" company="Marek Dzikiewicz">
+// <copyright file="AppBootstrapper.cs" company="Marek Dzikiewicz">
 //   Copyright (c) Marek Dzikiewicz
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace DesktopTimer
 {
+    using Caliburn.Micro;
+    using DesktopTimer.ViewModels;
+
     /// <summary>
-    /// Interaction logic for <c>MainWindow.xaml</c>.
+    /// The application bootstrapper.
     /// </summary>
-    public partial class MainWindow
+    public class AppBootstrapper : Bootstrapper<MainViewModel>
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MainWindow"/> class.
-        /// </summary>
-        public MainWindow()
-        {
-            this.InitializeComponent();
-        }
     }
 }
