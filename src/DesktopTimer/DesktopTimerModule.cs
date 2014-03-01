@@ -10,6 +10,7 @@ namespace DesktopTimer
     using System.Linq;
     using Autofac;
     using Caliburn.Micro;
+    using DesktopTimer.Core;
     using DesktopTimer.ViewModels;
 
     /// <summary>
@@ -23,6 +24,8 @@ namespace DesktopTimer
         /// <param name="builder">The builder through which components can be registered.</param>
         protected override void Load(ContainerBuilder builder)
         {
+            builder.RegisterModule<DesktopTimerCoreModule>();
+
             builder.RegisterType<WindowManager>().As<IWindowManager>().InstancePerLifetimeScope();
             builder.Register<IEventAggregator>(c => new EventAggregator()).InstancePerLifetimeScope();
 

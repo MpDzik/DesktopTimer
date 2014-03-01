@@ -10,6 +10,12 @@
       <Component Id="CaliburnMicro_Component" Guid="B3A793D1-F960-4BB4-B205-D47C91F526EE" Directory="INSTALLFOLDER">
         <File Id="CaliburnMicroDLL" Name="Caliburn.Micro.dll" Source="$(var.SourceRoot)" KeyPath="yes" Vital="yes" />
       </Component>
+      <Component Id="DesktopTimerCore_Component" Guid="4DC4E170-B457-429F-B56C-9654BBA46412" Directory="INSTALLFOLDER">
+        <File Id="DesktopTimerCoreDLL" Name="DesktopTimer.Core.dll" Source="$(var.SourceRoot)" KeyPath="yes" Vital="yes" />
+      </Component>
+      <Component Id="DesktopTimerCorePdb_Component" Guid="33D94754-C861-4BA6-9A01-D7DA197BCD96" Directory="INSTALLFOLDER">
+        <File Id="DesktopTimerCorePDB" Name="DesktopTimer.Core.pdb" Source="$(var.SourceRoot)" KeyPath="yes" Vital="yes" />
+      </Component>
       <Component Id="DesktopTimer_Component" Guid="1C7B0C4B-F6CE-485C-8B46-71443BE8ACFE" Directory="INSTALLFOLDER">
         <File Id="DesktopTimerEXE" Name="DesktopTimer.exe" Source="$(var.SourceRoot)" KeyPath="yes" Vital="yes" />
       </Component>

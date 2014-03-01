@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopTimer", "DesktopTime
 EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "DesktopTimerSetup", "DesktopTimerSetup\DesktopTimerSetup.wixproj", "{25A1D829-C776-444C-9035-0C9306FA04E5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopTimer.Core", "DesktopTimer.Core\DesktopTimer.Core.csproj", "{08229A47-66B7-48E7-AB9B-4EFFF4A4A76B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,16 @@ Global
 		{25A1D829-C776-444C-9035-0C9306FA04E5}.Release|Mixed Platforms.Build.0 = Release|x86
 		{25A1D829-C776-444C-9035-0C9306FA04E5}.Release|x86.ActiveCfg = Release|x86
 		{25A1D829-C776-444C-9035-0C9306FA04E5}.Release|x86.Build.0 = Release|x86
+		{08229A47-66B7-48E7-AB9B-4EFFF4A4A76B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08229A47-66B7-48E7-AB9B-4EFFF4A4A76B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08229A47-66B7-48E7-AB9B-4EFFF4A4A76B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{08229A47-66B7-48E7-AB9B-4EFFF4A4A76B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{08229A47-66B7-48E7-AB9B-4EFFF4A4A76B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{08229A47-66B7-48E7-AB9B-4EFFF4A4A76B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08229A47-66B7-48E7-AB9B-4EFFF4A4A76B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08229A47-66B7-48E7-AB9B-4EFFF4A4A76B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{08229A47-66B7-48E7-AB9B-4EFFF4A4A76B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{08229A47-66B7-48E7-AB9B-4EFFF4A4A76B}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -138,7 +138,12 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DesktopTimer.Core\DesktopTimer.Core.csproj">
+      <Project>{08229A47-66B7-48E7-AB9B-4EFFF4A4A76B}</Project>
+      <Name>DesktopTimer.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Page Include="Views\MainView.xaml">
       <SubType>Designer</SubType>
