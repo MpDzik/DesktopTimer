@@ -4,6 +4,9 @@
     <Property Id="DesktopTimerComponents" Value="1" />
     <?define SourceRoot = $(var.DesktopTimer.TargetDir)?>
     <ComponentGroup Id="DesktopTimerComponents">
+      <Component Id="Autofac_Component" Guid="5D6196D2-59C8-46AD-83EA-FB34AD400DA7" Directory="INSTALLFOLDER">
+        <File Id="AutofacDLL" Name="Autofac.dll" Source="$(var.SourceRoot)" KeyPath="yes" Vital="yes" />
+      </Component>
       <Component Id="CaliburnMicro_Component" Guid="B3A793D1-F960-4BB4-B205-D47C91F526EE" Directory="INSTALLFOLDER">
         <File Id="CaliburnMicroDLL" Name="Caliburn.Micro.dll" Source="$(var.SourceRoot)" KeyPath="yes" Vital="yes" />
       </Component>

@@ -6,13 +6,12 @@
 
 namespace DesktopTimer.ViewModels
 {
-    using Caliburn.Micro;
     using DesktopTimer.Properties;
 
     /// <summary>
     /// The main view model.
     /// </summary>
-    public class MainViewModel : PropertyChangedBase
+    public class MainViewModel : ViewModelBase
     {
         /// <summary>
         /// The main window title.
