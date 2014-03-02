@@ -14,6 +14,7 @@
     <!-- Main feature -->
     <Feature Id="DesktopTimer" Title="Desktop Timer" Level="1">
       <ComponentGroupRef Id="DesktopTimerComponents" />
+      <ComponentRef Id="DesktopTimerShortcut_Component" />
     </Feature>
     
     <!-- Components -->
@@ -36,6 +37,9 @@
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder">
         <Directory Id="INSTALLFOLDER" Name="Desktop Timer" />
+      </Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="Desktop Timer"/>
       </Directory>
     </Directory>
   </Fragment>

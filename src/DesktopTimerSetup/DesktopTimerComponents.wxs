@@ -34,6 +34,23 @@
       <Component Id="SystemWindowsInteractivity_Component" Guid="3CD09425-5B80-40E3-9155-502F02B5CD03" Directory="INSTALLFOLDER">
         <File Id="SystemWindowsInteractivityDLL" Name="System.Windows.Interactivity.dll" Source="$(var.SourceRoot)" KeyPath="yes" Vital="yes" />
       </Component>
+
+      <!-- Auto-start -->
+      <Component Id="DesktopTimerAutoStart_Component" Guid="9725BE75-6D8D-4C19-BC4F-56940A249149" Directory="INSTALLFOLDER">
+        <RegistryValue Id="DesktopTimerAutoStart" Root="HKMU" Action="write" Key="Software\Microsoft\Windows\CurrentVersion\Run"
+                       Name="Desktop Timer" Value="[#DesktopTimerEXE]" Type="string" />
+      </Component>
     </ComponentGroup>
+
+    <!-- Shortcuts -->
+    <DirectoryRef Id="ApplicationProgramsFolder">
+      <Component Id="DesktopTimerShortcut_Component" Guid="3936E995-8840-441B-9288-FD3DF74FD261">
+        <Shortcut Id="DesktopTimerLNK" Name="Desktop Timer" Description="Desktop Timer" Target="[#DesktopTimerEXE]"
+                  WorkingDirectory="INSTALLFOLDER"/>
+        <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU" Key="Software\Microsoft\ProligenceRiftTracker" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+    
   </Fragment>
 </Wix>
