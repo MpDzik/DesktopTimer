@@ -12,7 +12,7 @@ namespace DesktopTimer.ViewModels
     using DesktopTimer.Domain;
 
     /// <summary>
-    /// Represents the view model for the timer dialog.
+    /// Represents the view model for the timer editor dialog.
     /// </summary>
     public class TimerEditorViewModel : ViewModelBase
     {

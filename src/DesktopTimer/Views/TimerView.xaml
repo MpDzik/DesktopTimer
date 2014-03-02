@@ -1,0 +1,81 @@
+﻿<Window x:Class="DesktopTimer.Views.TimerView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TimerView" Height="200" Width="300" WindowStyle="None" AllowsTransparency="True" MouseDown="OnTimerViewMouseDown">
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="{Binding BackColor}" />
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="{Binding Timer.Name}" FontSize="18" HorizontalAlignment="Center" >
+            <Label.Foreground>
+                <SolidColorBrush Color="{Binding ForeColor}" />
+            </Label.Foreground>
+        </Label>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Content="{Binding RemainingTime.Days}" HorizontalAlignment="Center"
+                   VerticalAlignment="Center" FontWeight="Bold" FontSize="32" ContentStringFormat="D2">
+                <Label.Foreground>
+                    <SolidColorBrush Color="{Binding ForeColor}" />
+                </Label.Foreground>
+            </Label>
+            <Label Grid.Row="0" Grid.Column="1" Content="{Binding RemainingTime.Hours}" HorizontalAlignment="Center"
+                   VerticalAlignment="Center" FontWeight="Bold" FontSize="32" ContentStringFormat="D2">
+                <Label.Foreground>
+                    <SolidColorBrush Color="{Binding ForeColor}" />
+                </Label.Foreground>
+            </Label>
+            <Label Grid.Row="0" Grid.Column="2" Content="{Binding RemainingTime.Minutes}" HorizontalAlignment="Center"
+                   VerticalAlignment="Center" FontWeight="Bold" FontSize="32" ContentStringFormat="D2">
+                <Label.Foreground>
+                    <SolidColorBrush Color="{Binding ForeColor}" />
+                </Label.Foreground>
+            </Label>
+            <Label Grid.Row="0" Grid.Column="3" Content="{Binding RemainingTime.Seconds}" HorizontalAlignment="Center"
+                   VerticalAlignment="Center" FontWeight="Bold" FontSize="32" ContentStringFormat="D2">
+                <Label.Foreground>
+                    <SolidColorBrush Color="{Binding ForeColor}" />
+                </Label.Foreground>
+            </Label>
+            <Label Grid.Row="1" Grid.Column="0" Content="Days" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="16">
+                <Label.Foreground>
+                    <SolidColorBrush Color="{Binding ForeColor}" />
+                </Label.Foreground>
+            </Label>
+            <Label Grid.Row="1" Grid.Column="1" Content="Hours" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="16">
+                <Label.Foreground>
+                    <SolidColorBrush Color="{Binding ForeColor}" />
+                </Label.Foreground>
+            </Label>
+            <Label Grid.Row="1" Grid.Column="2" Content="Minutes" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="16">
+                <Label.Foreground>
+                    <SolidColorBrush Color="{Binding ForeColor}" />
+                </Label.Foreground>
+            </Label>
+            <Label Grid.Row="1" Grid.Column="3" Content="Seconds" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="16">
+                <Label.Foreground>
+                    <SolidColorBrush Color="{Binding ForeColor}" />
+                </Label.Foreground>
+            </Label>
+        </Grid>
+        <Label Grid.Row="2" Content="{Binding Timer.Description}" HorizontalAlignment="Center">
+            <Label.Foreground>
+                <SolidColorBrush Color="{Binding ForeColor}" />
+            </Label.Foreground>
+        </Label>
+    </Grid>
+</Window>

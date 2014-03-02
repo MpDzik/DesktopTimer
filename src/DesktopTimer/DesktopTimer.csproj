@@ -94,12 +94,16 @@
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="ViewModels\TimerEditorViewModel.cs" />
+    <Compile Include="ViewModels\TimerViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TimerEditorView.xaml.cs">
       <DependentUpon>TimerEditorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TimerView.xaml.cs">
+      <DependentUpon>TimerView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +167,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\TimerEditorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TimerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

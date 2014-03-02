@@ -9,6 +9,7 @@ namespace DesktopTimer.ViewModels
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Windows;
     using Caliburn.Micro;
     using DesktopTimer.Core;
     using DesktopTimer.Domain;
@@ -30,9 +31,9 @@ namespace DesktopTimer.ViewModels
         private readonly ITimerManager timerManager;
 
         /// <summary>
-        /// The main window title.
+        /// The view models of the displayed timers.
         /// </summary>
-        private string windowTitle = Resources.MainViewModel_windowTitle;
+        private readonly IList<TimerViewModel> timerViews;
 
         /// <summary>
         /// The registered timers.
@@ -64,23 +65,18 @@ namespace DesktopTimer.ViewModels
             this.windowManager = windowManager;
             this.timerManager = timerManager;
 
-            this.Timers = timerManager.GetAllTimers().ToList();
+            this.timerViews = new List<TimerViewModel>();
+            this.ReloadTimers();
         }
 
         /// <summary>
-        /// Gets or sets the main window title.
+        /// Gets the main window title.
         /// </summary>
         public string WindowTitle
         {
             get
             {
-                return this.windowTitle;
-            }
-
-            set
-            {
-                this.windowTitle = value;
-                this.NotifyOfPropertyChange(() => this.WindowTitle);
+                return Resources.MainViewModel_windowTitle;
             }
         }
 
@@ -137,6 +133,27 @@ namespace DesktopTimer.ViewModels
         }
 
         /// <summary>
+        /// Reloads all timers.
+        /// </summary>
+        public void ReloadTimers()
+        {
+            foreach (TimerViewModel view in this.timerViews)
+            {
+                ((Window)view.GetView()).Close();
+            }
+
+            this.timerViews.Clear();
+            
+            this.Timers = this.timerManager.GetAllTimers().ToList();
+            foreach (Timer timer in this.timers)
+            {
+                var view = new TimerViewModel { Timer = timer };
+                this.windowManager.ShowWindow(view);
+                this.timerViews.Add(view);
+            }
+        }
+
+        /// <summary>
         /// Creates a new timer.
         /// </summary>
         public void AddTimer()
@@ -147,7 +164,7 @@ namespace DesktopTimer.ViewModels
                 this.timerManager.SaveTimer(timerViewModel.Timer);
             }
 
-            this.Timers = this.timerManager.GetAllTimers().ToList();
+            this.ReloadTimers();
         }
 
         /// <summary>
@@ -165,7 +182,7 @@ namespace DesktopTimer.ViewModels
                 }    
             }
 
-            this.Timers = this.timerManager.GetAllTimers().ToList();
+            this.ReloadTimers();
         }
 
         /// <summary>
@@ -179,7 +196,7 @@ namespace DesktopTimer.ViewModels
                 this.timerManager.RemoveTimer(timer);
             }
 
-            this.Timers = this.timerManager.GetAllTimers().ToList();
+            this.ReloadTimers();
         }
     }
 }
