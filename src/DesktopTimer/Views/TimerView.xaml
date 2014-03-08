@@ -6,7 +6,7 @@
         Title="TimerView" Height="{Binding Height, Mode=TwoWay}" Width="{Binding Width, Mode=TwoWay}" MinHeight="200" MinWidth="300" 
         MaxHeight="600" MaxWidth="900" WindowStyle="None" AllowsTransparency="True" ResizeMode="CanResizeWithGrip" 
         Left="{Binding Left, Mode=TwoWay}" Top="{Binding Top, Mode=TwoWay}" MouseDown="OnTimerViewMouseDown"
-        StateChanged="OnTimerViewStateChanged">
+        StateChanged="OnTimerViewStateChanged" ShowInTaskbar="False">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Closed">
             <cal:ActionMessage MethodName="OnWindowClosed" />
