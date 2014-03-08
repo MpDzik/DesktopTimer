@@ -31,7 +31,10 @@
       <Component Id="DesktopTimerPdb_Component" Guid="E57C4E64-08AD-4F0F-86BB-682294B7D8C7" Directory="INSTALLFOLDER">
         <File Id="DesktopTimerPDB" Name="DesktopTimer.pdb" Source="$(var.SourceRoot)" KeyPath="yes" Vital="yes" />
       </Component>
-      <Component Id="SystemWindowsInteractivity_Component" Guid="3CD09425-5B80-40E3-9155-502F02B5CD03" Directory="INSTALLFOLDER">
+      <Component Id="HardcodetWpfTaskbarNotification_Component" Guid="F745D023-A94E-45DE-B476-334AAC381458" Directory="INSTALLFOLDER">
+      <File Id="HardcodetWpfTaskbarNotificationDLL" Name="Hardcodet.Wpf.TaskbarNotification.dll" Source="$(var.SourceRoot)" KeyPath="yes" Vital="yes" />
+    </Component>
+    <Component Id="SystemWindowsInteractivity_Component" Guid="3CD09425-5B80-40E3-9155-502F02B5CD03" Directory="INSTALLFOLDER">
         <File Id="SystemWindowsInteractivityDLL" Name="System.Windows.Interactivity.dll" Source="$(var.SourceRoot)" KeyPath="yes" Vital="yes" />
       </Component>
 
