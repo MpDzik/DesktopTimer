@@ -6,6 +6,8 @@
 
 namespace DesktopTimer.Views
 {
+    using System;
+    using System.Windows;
     using System.Windows.Input;
 
     /// <summary>
@@ -31,6 +33,19 @@ namespace DesktopTimer.Views
             if (e.ChangedButton == MouseButton.Left)
             {
                 this.DragMove();
+            }
+        }
+
+        /// <summary>
+        /// Called when the state of the window changes.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        private void OnTimerViewStateChanged(object sender, EventArgs e)
+        {
+            if (this.WindowState == WindowState.Maximized)
+            {
+                this.WindowState = WindowState.Normal;
             }
         }
     }
