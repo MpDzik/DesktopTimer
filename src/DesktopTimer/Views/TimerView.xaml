@@ -3,9 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:cal="http://www.caliburnproject.org"
-        Title="TimerView" Height="200" Width="300" MaxHeight="600" MaxWidth="900"  WindowStyle="None" AllowsTransparency="True"
-        Left="{Binding Left, Mode=TwoWay}" Top="{Binding Top, Mode=TwoWay}"
-        MouseDown="OnTimerViewMouseDown" StateChanged="OnTimerViewStateChanged">
+        Title="TimerView" Height="{Binding Height, Mode=TwoWay}" Width="{Binding Width, Mode=TwoWay}" MinHeight="100" MinWidth="150" MaxHeight="600" MaxWidth="900" WindowStyle="None"
+        AllowsTransparency="True" Left="{Binding Left, Mode=TwoWay}" Top="{Binding Top, Mode=TwoWay}"
+        MouseDown="OnTimerViewMouseDown" StateChanged="OnTimerViewStateChanged" ResizeMode="CanResizeWithGrip">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Closed">
             <cal:ActionMessage MethodName="OnWindowClosed" />

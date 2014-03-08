@@ -134,6 +134,40 @@ namespace DesktopTimer.ViewModels
         }
 
         /// <summary>
+        /// Gets or sets the width of the timer window.
+        /// </summary>
+        public int Width
+        {
+            get
+            {
+                return this.timer.Size.Width;
+            }
+
+            set
+            {
+                this.timer.Size = new Size(value, this.timer.Size.Height);
+                this.NotifyOfPropertyChange(() => this.Width);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the height of the timer window.
+        /// </summary>
+        public int Height
+        {
+            get
+            {
+                return this.timer.Size.Height;
+            }
+
+            set
+            {
+                this.timer.Size = new Size(this.timer.Size.Width, value);
+                this.NotifyOfPropertyChange(() => this.Height);
+            }
+        }
+
+        /// <summary>
         /// Called when the timer window is closed.
         /// </summary>
         public void OnWindowClosed()

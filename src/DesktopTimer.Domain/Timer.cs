@@ -22,6 +22,7 @@ namespace DesktopTimer.Domain
             this.Id = Guid.NewGuid();
             this.Name = "NewTimer";
             this.Display = new TimerDisplay { BackColor = Color.DodgerBlue, ForeColor = Color.Black };
+            this.Size = new Size(300, 200);
         }
 
         /// <summary>
@@ -48,5 +49,10 @@ namespace DesktopTimer.Domain
         /// Gets or sets the timer's position on the screen.
         /// </summary>
         public Point Position { get; set; }
+
+        /// <summary>
+        /// Gets or sets the timer's size.
+        /// </summary>
+        public Size Size { get; set; }
     }
 }
