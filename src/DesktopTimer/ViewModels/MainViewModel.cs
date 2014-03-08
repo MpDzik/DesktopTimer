@@ -144,10 +144,10 @@ namespace DesktopTimer.ViewModels
 
             this.timerViews.Clear();
             
-            this.Timers = this.timerManager.GetAllTimers().ToList();
+            this.Timers = this.timerManager.GetTimers().ToList();
             foreach (Timer timer in this.timers)
             {
-                var view = new TimerViewModel { Timer = timer };
+                var view = new TimerViewModel(this.timerManager) { Timer = timer };
                 this.windowManager.ShowWindow(view);
                 this.timerViews.Add(view);
             }

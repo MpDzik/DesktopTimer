@@ -1,8 +1,16 @@
 ﻿<Window x:Class="DesktopTimer.Views.TimerView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:cal="http://www.caliburnproject.org"
         Title="TimerView" Height="200" Width="300" MaxHeight="600" MaxWidth="900"  WindowStyle="None" AllowsTransparency="True"
+        Left="{Binding Left, Mode=TwoWay}" Top="{Binding Top, Mode=TwoWay}"
         MouseDown="OnTimerViewMouseDown" StateChanged="OnTimerViewStateChanged">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Closed">
+            <cal:ActionMessage MethodName="OnWindowClosed" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Grid>
         <Grid.Background>
             <SolidColorBrush Color="{Binding BackColor}" />

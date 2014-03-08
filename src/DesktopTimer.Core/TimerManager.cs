@@ -23,6 +23,11 @@ namespace DesktopTimer.Core
         private readonly ITimerStore store;
 
         /// <summary>
+        /// The currently loaded timers.
+        /// </summary>
+        private IList<Timer> timers;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="TimerManager"/> class.
         /// </summary>
         /// <param name="store">The timer storage component.</param>
@@ -32,12 +37,27 @@ namespace DesktopTimer.Core
         }
 
         /// <summary>
-        /// Gets all timers.
+        /// Gets the currently loaded timers.
         /// </summary>
         /// <returns>A sequence of timers.</returns>
-        public IEnumerable<Timer> GetAllTimers()
+        public IEnumerable<Timer> GetTimers()
         {
-            return this.store.RetrieveTimers();
+            if (this.timers == null)
+            {
+                this.timers = this.store.RetrieveTimers().ToList();
+            }
+
+            return this.timers;
+        }
+
+        /// <summary>
+        /// Reloads all timers from the store.
+        /// </summary>
+        /// <returns>A sequence of timers.</returns>
+        public IEnumerable<Timer> ReloadTimers()
+        {
+            this.timers = this.store.RetrieveTimers().ToList();
+            return this.timers;
         }
 
         /// <summary>
@@ -51,21 +71,19 @@ namespace DesktopTimer.Core
                 throw new ArgumentNullException("timer");
             }
 
-            List<Timer> timers = this.store.RetrieveTimers().ToList();
-
-            Timer existingTimer = timers.FirstOrDefault(t => t.Id == timer.Id);
+            Timer existingTimer = this.timers.FirstOrDefault(t => t.Id == timer.Id);
             if (existingTimer != null)
             {
-                int index = timers.IndexOf(existingTimer);
-                timers.Remove(existingTimer);
-                timers.Insert(index, timer);
+                int index = this.timers.IndexOf(existingTimer);
+                this.timers.Remove(existingTimer);
+                this.timers.Insert(index, timer);
             }
             else
             {
-                timers.Add(timer);
+                this.timers.Add(timer);
             }
 
-            this.store.PersistTimers(timers);
+            this.store.PersistTimers(this.timers);
         }
 
         /// <summary>
@@ -82,16 +100,14 @@ namespace DesktopTimer.Core
                 throw new ArgumentNullException("timer");
             }
 
-            List<Timer> timers = this.store.RetrieveTimers().ToList();
-
-            Timer existingTimer = timers.FirstOrDefault(t => t.Id == timer.Id);
+            Timer existingTimer = this.timers.FirstOrDefault(t => t.Id == timer.Id);
             if (existingTimer == null)
             {
                 return false;
             }
 
-            timers.Remove(existingTimer);
-            this.store.PersistTimers(timers);
+            this.timers.Remove(existingTimer);
+            this.store.PersistTimers(this.timers);
             
             return true;
         }

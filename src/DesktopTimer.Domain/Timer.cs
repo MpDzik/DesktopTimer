@@ -43,5 +43,10 @@ namespace DesktopTimer.Domain
         /// Gets or sets the display parameters of the timer.
         /// </summary>
         public TimerDisplay Display { get; set; }
+
+        /// <summary>
+        /// Gets or sets the timer's position on the screen.
+        /// </summary>
+        public Point Position { get; set; }
     }
 }

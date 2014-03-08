@@ -15,10 +15,16 @@ namespace DesktopTimer.Core
     public interface ITimerManager
     {
         /// <summary>
-        /// Gets all timers.
+        /// Gets the currently loaded timers.
         /// </summary>
         /// <returns>A sequence of timers.</returns>
-        IEnumerable<Timer> GetAllTimers();
+        IEnumerable<Timer> GetTimers();
+
+        /// <summary>
+        /// Reloads all timers from the store.
+        /// </summary>
+        /// <returns>A sequence of timers.</returns>
+        IEnumerable<Timer> ReloadTimers();
 
         /// <summary>
         /// Saves the specified timer.
