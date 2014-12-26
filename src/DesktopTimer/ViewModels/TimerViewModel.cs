@@ -7,7 +7,9 @@
 namespace DesktopTimer.ViewModels
 {
     using System;
+    using System.Collections.Generic;
     using System.Drawing;
+    using System.Linq;
     using DesktopTimer.Core;
     using DesktopTimer.Domain;
     using Color = System.Windows.Media.Color;
@@ -172,7 +174,11 @@ namespace DesktopTimer.ViewModels
         /// </summary>
         public void OnWindowClosed()
         {
-            this.timerManager.SaveTimer(this.timer);
+            IEnumerable<Timer> timers = this.timerManager.GetTimers();
+            if (timers.Any(t => t.Id == timer.Id))
+            {
+                this.timerManager.SaveTimer(this.timer);                
+            }
         }
     }
 }
